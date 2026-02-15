@@ -304,13 +304,14 @@ def evaluate_model(model, X_test, y_test, model_name):
 def display_metrics_table(results):
     """Display evaluation metrics in a clean table format."""
     metrics_data = {
-        'Metric': ['Accuracy', 'AUC Score', 'Precision', 'Recall', 'F1 Score'],
+        'Metric': ['Accuracy', 'AUC Score', 'Precision', 'Recall', 'F1 Score', 'MCC'],
         'Value': [
             f"{results['accuracy']:.4f}",
             f"{results['auc']:.4f}" if results['auc'] is not None else "N/A",
             f"{results['precision']:.4f}",
             f"{results['recall']:.4f}",
-            f"{results['f1']:.4f}"
+            f"{results['f1']:.4f}",
+            f"{results['mcc']:.4f}"
         ]
     }
     
@@ -474,4 +475,5 @@ def main():
 
 
 if __name__ == "__main__":
+
     main() # main function start
